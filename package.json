@@ -1,0 +1,26 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "A database system to track employees and their attributes",
+  "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kheller18/employee-tracker.git"
+  },
+  "author": "Keenan Heller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kheller18/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/kheller18/employee-tracker#readme"
+}
