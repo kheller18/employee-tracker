@@ -2,7 +2,7 @@
   "name": "employee-tracker",
   "version": "1.0.0",
   "description": "A database system to track employees and their attributes",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^7.3.3",
