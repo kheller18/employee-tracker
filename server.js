@@ -1,7 +1,8 @@
 const path = require("path");
 const cTable = require("console.table");
 const inquirer = require("inquirer");
-const SQL = require("./Assets/main")
+const SQL = require("./Assets/main");
+const fs = require("fs");
 
 // default menu that user is presented with
 const menu = (userChoice) => {
@@ -190,6 +191,7 @@ const init = async () => {
 
   try {
     await sqlObj.dbCheck();
+    console.log(welcome());
   } catch(err) {
     return console.log(err);
   }
@@ -387,6 +389,15 @@ const adminMenu = async(sqlObj) => {
     } catch(err) {
       console.log(err)
     }
+  }
+}
+
+// function to load the welcome.txt file
+const welcome = () => {
+  try {
+    return fs.readFileSync("./Assets/welcome.txt", "utf8");
+  } catch(err) {
+    console.log(err);
   }
 }
 
