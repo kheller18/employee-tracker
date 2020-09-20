@@ -67,7 +67,6 @@ class SQL {
                 employeeObj.managerId,
                 employeeObj.id
             ];
-            console.log(employeeObj.id);
             const updateEmployee = [
                 "UPDATE employeesDB.employee",
                 "SET first_name = ?, nickname = ?, last_name = ?, role_id = ?, manager_id = ?",
@@ -242,7 +241,6 @@ class SQL {
         try {
             await this.dbOpen(db);
             const response = await this.dbQuery(db, sqlString, parameters)
-//            console.log(`running on port ${ this.parameters.port }`);
             await this.dbClose(db);
             return response;
         } catch(err) {
@@ -283,7 +281,6 @@ class SQL {
             let response = await this.sqlConnect(dbQuery);
 
             if (response.length == 0) {
-                console.log("Database 'employeesDB' was not found, uploading seed file");
                 resolve(this.dbReset());
             } else {
                 const dbTablesQuery = [
@@ -294,7 +291,6 @@ class SQL {
                 response = await this.sqlConnect(dbTablesQuery);
 
                 if (response.length != 3) {
-                    console.log("The correct tables were not found in 'employeesDB', uploading seed file");
                     resolve(this.dbReset());
                 }
             }
